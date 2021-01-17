@@ -75,23 +75,18 @@ public class Dungeon {
             movePlayer(player);
         }
         if (player.isAlive()) {
-            System.out.println("CROWN");
+            System.out.println("Win");
         } else {
-            System.out.println("REAPER");
+            System.out.println("Lose");
         }
     }
 
     public static Dungeon newInstance() {
         Dungeon dungeon = new Dungeon();
         dungeon.putRoom(0, 0, Room.newRegularInstance());
-        dungeon.putRoom(-1, 1, Room.newRegularInstance());
         dungeon.putRoom(0, 1, Room.newRegularInstance());
-        dungeon.putRoom(1, 1, Room.newRegularInstance());
-        dungeon.putRoom(-1, 2, Room.newRegularInstance());
-        dungeon.putRoom(1, 2, Room.newRegularInstance());
-        dungeon.putRoom(-1, 3, Room.newRegularInstance());
+        dungeon.putRoom(0, 2, Room.newRegularInstance());
         dungeon.putRoom(0, 3, Room.newRegularInstance());
-        dungeon.putRoom(1, 3, Room.newRegularInstance());
         dungeon.putRoom(0, 4, Room.newBossInstance());
         dungeon.currentRoom = dungeon.getRoom(0, 0);
         return dungeon;
